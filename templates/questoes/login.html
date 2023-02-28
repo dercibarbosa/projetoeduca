@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block conteudo %}
+<div class="container jumbotron">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <p><input type="text" name="username" placeholder="Username..."></p>
+        <p><input type="password" name="password" placeholder="Password..." ></p>
+        <input class="btn btn-success" type="submit" value="Login">
+        <p>Caso não tenha cadastro<a href='{% url 'register' %}'>Registra seu cadastro</a></p>
+    </form>
+</div>
+{% endblock %}
