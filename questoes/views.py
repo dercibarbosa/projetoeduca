@@ -34,12 +34,13 @@ def home(request):
         }
         return render(request,'questoes/result.html',context)
     else:
-        questions=QuestoesModel.objects.all()
+        questions = QuestoesModel.objects.all()
         context = {
-            'questions':questions
+            'questions': questions
         }
-        return render(request,'questoes/home.html',context)
- 
+        return render(request, 'questoes/home.html', context)
+
+
 def addQuestion(request):    
     if request.user.is_staff:
         form=addQuestionform()
